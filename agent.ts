@@ -1,17 +1,36 @@
-function verifyRezeta(): boolean {
-    // verify by retrieving schema from api server
+const REZETA_API_SERVER = "http://localhost:8000"
 
-    // send get request to apiserver/schema
-    return true;
+/**
+ * Fetches the latest schema from the REZETA API server.
+ *
+ * @returns {Promise<object>} A promise that resolves to the latest schema object.
+ */
+async function getLatestSchema(): Promise<object> {
+    const response = await fetch(REZETA_API_SERVER + "/schema");
+    const schema = await response.json();
+    console.log(schema);
+    return schema;
 }
 
-export function rezetero(data: string): object {
-
-    if (!verifyRezeta()) {
-        return { status: "error", message: "Rezetero not verified" };
-    }
+/**
+ * Transforms the provided string data into a Rezeta representation.
+ *
+ * @returns {Promise<object>} A promise that resolves a Rezeta represention of the provided string data
+ */
+export async function rezetero(data: string): object {   
     // use langchain to do stuff
+
+    // add getLatestSchema() tool
+
+
+    // add tool for parsing recipe data
+
+
+    // use langchain to transform text into json
+
     
-    return { status: "success", message: "Rezetero verified", data: data};
+    console.log(data);
+    const placeHolder = await getLatestSchema();
+    return placeHolder;
 }
 

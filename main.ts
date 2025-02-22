@@ -2,14 +2,12 @@
 import express from "npm:express@4.18.2";
 import { rezetero } from "./agent.ts";
 
-
 const app = express();
 
-app.get("/", (req, res) => {
-
-  const placeholder = "Hello!";
-  res.send(rezetero(placeholder));
+app.get("/", async (req, res) => {
+  const placeholder = await rezetero("hello world");
+  res.send(placeholder);
 });
 
 
-app.listen(8000);
+app.listen(8001);
