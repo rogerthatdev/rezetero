@@ -1,7 +1,7 @@
 const REZETA_API_SERVER = "http://localhost:8000";
 
 Deno.serve({ port: 8001 }, async (req) => {
-  if (req.method === "POST") {
+  if (req.method === "POST" && req.json) {
     try {
       const body = await req.json();
       const placeholder = await rezetero(body.text);
