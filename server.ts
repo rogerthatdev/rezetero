@@ -1,6 +1,6 @@
-const REZETA_API_SERVER = "http://localhost:8000"
+const REZETA_API_SERVER = "http://localhost:8000";
 
-Deno.serve({ port:8001 }, async (req) => {
+Deno.serve({ port: 8001 }, async (req) => {
   if (req.method === "POST") {
     try {
       const body = await req.json();
@@ -12,7 +12,6 @@ Deno.serve({ port:8001 }, async (req) => {
   }
   return new Response("Only POST supported", { status: 405 });
 });
-  
 
 /**
  * Fetches the latest schema from the REZETA API server.
@@ -20,9 +19,9 @@ Deno.serve({ port:8001 }, async (req) => {
  * @returns {Promise<object>} A promise that resolves to the latest schema object.
  */
 async function getLatestSchema(): Promise<object> {
-    const response = await fetch(REZETA_API_SERVER + "/schema");
-    const schema = await response.json();
-    return schema;
+  const response = await fetch(REZETA_API_SERVER + "/schema");
+  const schema = await response.json();
+  return schema;
 }
 
 /**
@@ -30,22 +29,16 @@ async function getLatestSchema(): Promise<object> {
  *
  * @returns {Promise<object>} A promise that resolves a Rezeta represention of the provided string data
  */
-async function rezetero(data: string): Promise <object> {   
-    // use langchain to do stuff
+async function rezetero(data: string): Promise<object> {
+  // use langchain to do stuff
 
-    // add getLatestSchema() tool
+  // add getLatestSchema() tool
 
+  // add tool for parsing recipe data
 
-    // add tool for parsing recipe data
+  // use langchain to transform text into json
 
-
-    // use langchain to transform text into json
-
-    
-    console.log(`rezertero: ${data}`);
-    const placeHolder = await getLatestSchema();
-    return placeHolder;
+  console.log(`rezertero: ${data}`);
+  const placeHolder = await getLatestSchema();
+  return placeHolder;
 }
-
-
-  
