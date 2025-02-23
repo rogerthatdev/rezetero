@@ -8,7 +8,6 @@ const REZETA_API_SERVER = "http://localhost:8000"
 async function getLatestSchema(): Promise<object> {
     const response = await fetch(REZETA_API_SERVER + "/schema");
     const schema = await response.json();
-    console.log(schema);
     return schema;
 }
 
@@ -29,7 +28,7 @@ export async function rezetero(data: string): object {
     // use langchain to transform text into json
 
     
-    console.log(data);
+    console.log(`rezertero: ${data}`);
     const placeHolder = await getLatestSchema();
     return placeHolder;
 }
