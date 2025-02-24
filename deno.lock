@@ -4,6 +4,7 @@
     "jsr:@std/assert@1": "1.0.11",
     "jsr:@std/internal@^1.0.5": "1.0.5",
     "npm:@langchain/anthropic@*": "0.3.13_@langchain+core@0.3.40__zod@3.24.2_zod@3.24.2",
+    "npm:@langchain/anthropic@~0.3.13": "0.3.13_@langchain+core@0.3.40__zod@3.24.2_zod@3.24.2",
     "npm:@langchain/core@*": "0.3.40_zod@3.24.2",
     "npm:@langchain/langgraph@*": "0.2.48_@langchain+core@0.3.40__zod@3.24.2",
     "npm:@langchain/langgraph@0.2.24": "0.2.24_@langchain+core@0.3.40__zod@3.24.2",
@@ -763,6 +764,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@std/assert@1",
+      "npm:@langchain/anthropic@~0.3.13",
       "npm:@langchain/langgraph@0.2.24"
     ]
   }
